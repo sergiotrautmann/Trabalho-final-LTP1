@@ -15,12 +15,7 @@ class Bd_Simulado:
         file = open('Carros.txt', 'r')
         for c in file.readlines():
             c = c.strip().lstrip('(').rstrip(')').split(',')
-            carro = Carro(c[0].strip().strip('"').strip("'"),
-                            c[1].strip().strip('"').strip("'"),
-                            c[2].strip().strip('"').strip("'"),
-                            c[3].strip().strip('"').strip("'"),
-                            float(c[4].strip().strip('"').strip("'")),
-                            c[5].strip().strip('"').strip("'"))
+            carro = Carro(c[0].strip().strip('"').strip("'"),c[1].strip().strip('"').strip("'"),c[2].strip().strip('"').strip("'"),c[3].strip().strip('"').strip("'"),c[4].strip().strip('"').strip("'"),c[5].strip().strip('"').strip("'"))
             self.carros.append(carro)
         file.close()
 

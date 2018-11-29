@@ -1,2 +1,2 @@
 from control import Controle
-c = Controle()
+Menu = Controle()
