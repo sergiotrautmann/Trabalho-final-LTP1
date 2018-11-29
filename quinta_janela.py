@@ -1,13 +1,14 @@
 from tkinter import *
 from tkinter import messagebox
 from venda import Venda
-
+from datetime import  date
 
 class Quinta_janela(Toplevel):
     def __init__(self, parent, control, carro):
         super().__init__(parent)
         self.carro = carro
         self.control = control
+        self.data = None
         self.title(f'Venda - {self.carro.get_placa()}')
         self.geometry('400x200+200+200')
         self.transient(parent)
@@ -41,6 +42,7 @@ class Quinta_janela(Toplevel):
         preco = float(self.preco_venda_entry.get())
         vend = None
         comp = None
+        self.data_venda()
         for v in self.control.bd.get_vendedor():
             if mat == v.get_matricula():
                 vend = v
@@ -72,6 +74,8 @@ Placa: {self.carro.get_placa()}
 Valor do Carro: {self.carro.get_preco()}
 Valor recebido: {preco}
 Cor: {self.carro.get_cor()}
+Data: {self.data}
+
     Comprador
 Nome: {comp.get_nome()}
 CPF: {comp.get_cpf()}
@@ -84,3 +88,7 @@ Matrícula: {vend.get_matricula()}''')
 
     def only_numbers(self, char):
         return char.isnumeric()
+
+    def data_venda(self):
+        data = date.today()
+        self.data = data
