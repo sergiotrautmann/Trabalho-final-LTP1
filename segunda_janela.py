@@ -16,7 +16,7 @@ class Segunda_janela(Toplevel):
         Label(self, text='').grid(row=0, column=0, padx=20, pady=2)
         Label(self, text='').grid(row=47, column=0, padx=20, pady=20)
 
-        self.btn_add = Button(self, text='Adicionar', command=self.add_car).grid(row=7, column=1, columnspan=3, pady=10, stick=S)
+        self.btn_add = Button(self, text='Adicionar', command=self.add_car).grid(row=10, column=1, columnspan=3, pady=10, stick=S)
         self.bt_rmv = Button(self, text='Remover', command=self.rmv_car).grid(row=49, column=1, columnspan=3, pady=10, stick=S)
 
         self.btn_close = Button(self, text='Fechar Janela', command=self.destroy, width=10)
@@ -59,7 +59,9 @@ class Segunda_janela(Toplevel):
             grid(row=48, column=3)
         self.lbl_placa2 = Label(self, text='Placa'). \
             grid(row=48, column=1, stick=E)
-
+        self.entry_cor_var = StringVar()
+        self.entry_cor = Entry(self, textvariable=self.entry_cor_var).grid(row=7, column=3)
+        self.lbl_cor = Label(self, text='Cor').grid(row=7, column=1, stick=E)
     def add_car(self):
         modelo = self.entry_mod_var.get()
         marca = self.entry_marca_var.get()
@@ -67,7 +69,8 @@ class Segunda_janela(Toplevel):
         preco = float(self.entry_preco_var.get())
         estado = self.entry_estado_var.get()
         placa = self.entry_placa_var.get()
-        c = Carro(modelo, marca, ano, estado, preco, placa)
+        cor = self.entry_cor_var.get()
+        c = Carro(modelo, marca, ano, estado, preco, placa, cor)
         self.control.bd.add_carro(c)
         messagebox.showinfo('Carro', f'{placa} foi adicionado.')
 

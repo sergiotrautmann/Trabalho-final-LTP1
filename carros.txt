@@ -1,1 +1,1 @@
-ccc
+('corolla', '2008', 'usado', 10000.0, 'jgp-8080', 'prata')

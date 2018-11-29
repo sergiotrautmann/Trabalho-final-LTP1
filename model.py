@@ -1,11 +1,12 @@
 class Carro:
-    def __init__(self, modelo, marca, ano, estado, preco, placa):
+    def __init__(self, modelo, marca, ano, estado, preco, placa, cor):
         self.modelo = modelo
         self.marca = marca
         self.ano = ano
         self.preco = preco
         self.estado = estado
         self.placa = placa
+        self.cor = cor
 
     def get_modelo(self):
         return self.modelo
@@ -24,8 +25,11 @@ class Carro:
     def get_placa(self):
         return self.placa
 
+    def get_cor(self):
+        return self.cor
+
     def get_dados(self):
-        return self.modelo, self.ano, self.estado, self.preco, self.placa
+        return self.modelo, self.ano, self.estado, self.preco, self.placa, self.cor
 
 class Comprador:
     def __init__(self, nome, cpf):

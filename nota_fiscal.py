@@ -10,7 +10,7 @@ class Nota_fiscal(Toplevel):
         self.transient(parent)
         self.grab_set()
 
-        file = open('Nota de Venda.txt', 'r')
+        file = open('nota_fiscal.txt', 'r')
         self.text = Text(self, width=50, height=20)
         self.text.insert('1.0', file.read())
         self.text.grid(row=0, column=0)

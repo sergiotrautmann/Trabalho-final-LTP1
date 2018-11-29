@@ -16,6 +16,8 @@ class Terceira_janela(Toplevel):
         Label(self, text='').grid(row=0, column=0, padx=20, pady=10)
         Label(self, text='').grid(row=6, column=0, padx=40, pady=30)
 
+        self.btn_criar_comprador = Button(self, text='Criar Comprador', command=self.add_comp,width=10).grid(row=4, column=1)
+
         self.btn_close = Button(self, text='Fechar Janela', command=self.destroy, width=10)
         self.btn_close.grid(row=8, column=1, columnspan=3, stick=S, pady=20)
 

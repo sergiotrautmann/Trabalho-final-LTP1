@@ -1,1 +1,17 @@
-cccc
+    Carro
+Modelo: dasda
+Marca: asdadasad
+Ano: 132213
+Estado asda
+Placa: adasasdas
+Valor do Carro: 3123123213.0
+Valor recebido: 1.2312312312312312e+17
+Cor: da
+    Comprador
+Nome: serg
+CPF: 11
+
+    Vendedor
+Nome: ssdsd
+CPF: 23
+Matrícula: 33

@@ -22,14 +22,14 @@ class Janela_princial(Tk):
         self.carregar_carros()
 
     def carregar_carros(self):
-        r = 2
+        l = 0
         c = 0
         for b in self.control.bd.get_carros():
-            Button(self, width=10, text=f'{b.get_placa()}', command=lambda carro=b: self.criar_quinta_janela(carro)).grid(row=r, column=c, pady=5)
+            Button(self, width=10, text=f'{b.get_placa()}', command=lambda carro=b: self.criar_quinta_janela(carro)).grid(row=l, column=c, pady=5)
             c += 1
-            if c == 4:
+            if c == 10:
                 c = 0
-                r += 1
+                l += 1
     def atualizar_patio(self):
         for c in self.grid_slaves():
             if type(c) is Button:
@@ -37,15 +37,7 @@ class Janela_princial(Tk):
                     c.destroy()
         self.carregar_carros()
 
-    #     self.menu = Menu(self)
-    #     self.menu_principal = Menu(self.menu, tearoff=0)
-    #     self.menu_principal.add_command(label='Comando 1', command=self.menu_click)
-    #     self.menu_principal.add_command(label='Comando 2', command=self.menu_click)
-    #     self.menu_principal.add_command(label='Segunda janela', command=self.criar_segunda_janela)
-    #     self.menu_principal.add_separator()
-    #     self.menu_principal.add_command(label='Sair', command=self.destroy)
-    #     self.menu.add_cascade(label='Principal', menu=self.menu_principal)
-    #     self.config(menu=self.menu)
+
     def destroy(self):
         if messagebox.askokcancel('confirmação', 'Deseja sair?'):
             super().destroy()

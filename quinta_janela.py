@@ -56,23 +56,22 @@ class Quinta_janela(Toplevel):
             self.control.bd.save_vendas()
             self.gerar_nota(vend, comp, preco)
             super().destroy()
-            nota = open('Nota_fiscal.txt', 'r')
-            messagebox.showinfo('Notal fiscal', nota)
+            nota = open('nota_fiscal.txt', 'r')
+            messagebox.showinfo('Notal fiscal', nota.read())
         else:
             messagebox.showerror('Venda', 'Dados digitados incorretos. Por favor verificá-los.')
 
     def gerar_nota(self, vend, comp, preco):
-        f = open('Nota de Venda.txt', 'w')
+        f = open('nota_fiscal.txt', 'w')
         f.write(f'''    Carro
 Modelo: {self.carro.get_modelo()}
 Marca: {self.carro.get_marca()}
 Ano: {self.carro.get_ano()}
 Estado {self.carro.get_estado()}
 Placa: {self.carro.get_placa()}
-Preço de Compra: {self.carro.get_preco()}
-Preço de Venda: {preco}
-Lucro: {preco - self.carro.get_preco()}
-
+Valor do Carro: {self.carro.get_preco()}
+Valor recebido: {preco}
+Cor: {self.carro.get_cor()}
     Comprador
 Nome: {comp.get_nome()}
 CPF: {comp.get_cpf()}
