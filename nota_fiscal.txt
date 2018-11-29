@@ -1,12 +1,12 @@
     Carro
-Modelo: corolla
-Marca: toyota
-Ano: 2008
-Estado usado
-Placa: jgp-8383
-Valor do Carro: 10000.0
-Valor recebido: 1111.0
-Cor: prata
+Modelo: asda
+Marca: dasa
+Ano: 312
+Estado asd
+Placa: 123
+Valor do Carro: 13223.0
+Valor recebido: 123123.0
+Cor: sad
     Comprador
 Nome: serg
 CPF: 11

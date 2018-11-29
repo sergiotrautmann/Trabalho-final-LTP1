@@ -81,7 +81,7 @@ class Segunda_janela(Toplevel):
             return None
         for c in self.control.bd.get_carros():
             if c.get_placa() == placa:
-                rmvd = self.control.bd.rmv_car(c)
+                rmvd = self.control.bd.remover_carro(c)
                 messagebox.showinfo('Carro', f'{placa} foi removido.')
         if rmvd is None:
             messagebox.showerror('Carro', 'Não há carro cadastrado com estes dados.')
